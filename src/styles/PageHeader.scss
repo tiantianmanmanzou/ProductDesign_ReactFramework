@@ -1,0 +1,16 @@
+.page-header {
+  padding: 4px 0;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 24px;
+  
+  .page-header__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #303133;
+    margin: 0;
+  }
+}

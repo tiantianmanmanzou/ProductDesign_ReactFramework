@@ -1,0 +1,19 @@
+.pagination-container {
+  padding: 20px 0;
+  display: flex;
+  justify-content: flex-end;
+  
+  :global(.ant-pagination) {
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+    
+    .ant-pagination-options {
+      margin-right: 16px;
+    }
+    
+    .ant-pagination-item {
+      min-width: 30px;
+    }
+  }
+}

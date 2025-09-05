@@ -1,0 +1,267 @@
+/* 通用样式 */
+:root {
+  --primary-color: #1890ff;
+  --primary-hover: #40a9ff;
+  --danger-color: #ff4d4f;
+  --warning-color: #faad14;
+  --info-color: #8c8c8c;
+  --success-color: #52c41a;
+  --background-color: #f5f5f5;
+  --card-background: #ffffff;
+  --text-primary: #000000d9;
+  --text-secondary: #00000073;
+  --border-color: #d9d9d9;
+  --input-background: #ffffff;
+  --input-border: #d9d9d9;
+  --input-focus: #1890ff;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  --shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  --radius-sm: 2px;
+  --radius: 4px;
+}
+
+.governance-layout {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: var(--text-primary);
+  line-height: 1.5;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 顶部导航栏 */
+.header {
+  flex-shrink: 0;
+  height: 60px;
+  width: 100%;
+  background-color: #002244;
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative; 
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.system-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.nav-menu {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.nav-item {
+  padding: 0 15px; 
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+  position: relative; 
+  transition: background-color 0.3s;
+
+  &:hover,
+  &.active {
+    background-color: #003355;
+  }
+
+  .icon {
+    display: inline-block !important;
+    width: 24px !important;
+    height: 24px !important;
+    margin-right: 12px !important;
+    position: relative !important;
+    vertical-align: middle !important;
+    flex-shrink: 0 !important;
+    overflow: visible !important;
+  }
+
+  > span {
+    display: inline-block !important;
+    vertical-align: middle !important;
+    white-space: nowrap !important;
+    position: relative !important;
+    left: 0 !important;
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #003355;
+  border: 1px solid #002244;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1001;
+  min-width: 180px;
+  display: none;
+
+  &.show {
+    display: block;
+  }
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+
+  &:hover,
+  &.active {
+    background-color: #004466;
+  }
+}
+
+/* 面包屑导航 */
+.breadcrumb-container {
+  flex-shrink: 0;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #f0f2f5;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.breadcrumb .icon-home {
+  margin-right: 10px !important;
+}
+
+.breadcrumb-separator {
+  margin: 0 8px;
+  color: #999;
+}
+
+.breadcrumb span:last-child span:not(.breadcrumb-separator) {
+  font-weight: 600;
+  color: #333;
+}
+
+/* 图标 */
+.icon::before {
+  content: "" !important;
+  display: inline-block !important;
+  width: 24px !important;
+  height: 24px !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  vertical-align: middle !important;
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  margin: 0 !important;
+}
+
+.icon-eye::before {
+  content: "" !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z'/%3E%3C/svg%3E") !important;
+}
+
+.icon-shield::before {
+  content: "" !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M17.13,17C15.92,18.85 14.11,20.24 12,20.92C9.89,20.24 8.08,18.85 6.87,17C6.53,16.5 6.24,16 6,15.47C6,13.82 8.71,12.47 12,12.47C15.29,12.47 18,13.79 18,15.47C17.76,16 17.47,16.5 17.13,17Z'/%3E%3C/svg%3E") !important;
+}
+
+.icon-chart::before {
+  content: "" !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M22,21H2V3H4V19H22V21M14,10V17H12V10H14M10,13V17H8V13H10M18,7V17H16V7H18Z'/%3E%3C/svg%3E") !important;
+}
+
+.icon-shopping::before {
+  content: "" !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5H5.21L4.27,2H1M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z'/%3E%3C/svg%3E") !important;
+}
+
+.icon-list::before {
+  content: "" !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M3,4H21V8H3V4M3,10H21V14H3V10M3,16H21V20H3V16Z'/%3E%3C/svg%3E") !important;
+}
+
+.icon-home::before {
+  content: "" !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23666'%3E%3Cpath d='M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z'/%3E%3C/svg%3E") !important;
+}
+
+/* 图标容器样式 */
+.icon {
+  display: inline-block !important;
+  width: 24px !important;
+  height: 24px !important;
+  position: relative !important;
+  vertical-align: middle !important;
+  margin-right: 10px !important;
+  flex-shrink: 0 !important;
+}
+
+/* 内容区域 */
+.layout-content {
+  flex-grow: 1;
+  width: 100%;
+  overflow-y: auto;
+  padding: 0;
+  background-color: #fff; 
+  -webkit-overflow-scrolling: touch; 
+  height: 0; 
+  min-height: 0; 
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.router-view-wrapper {
+  flex-grow: 1; 
+  padding: 0; 
+  overflow: hidden;
+  height: 0;
+  min-height: 0;
+  width: 100%;
+
+  &.is-scrollable {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+/* Placeholder for user info if it's part of the header */
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name {
+  font-size: 14px;
+}

@@ -1,0 +1,25 @@
+.search-bar {
+  width: 100%;
+  
+  .search-form {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    
+    .ant-form-item {
+      margin-right: 12px;
+      margin-bottom: 0;
+      white-space: nowrap;
+    }
+    
+    .ant-form-item:last-child {
+      margin-right: 0;
+    }
+    
+    &.more-open {
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+  }
+}

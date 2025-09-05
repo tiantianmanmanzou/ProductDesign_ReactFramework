@@ -1,0 +1,81 @@
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  &.layout-auto-height {
+    height: auto;
+  }
+}
+
+.page-content {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
+  flex-grow: 1;
+  overflow: hidden;
+  min-height: 0;
+  padding: 16px 24px 16px 8px;
+  gap: 16px;
+}
+
+.right-content-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+  box-sizing: border-box;
+
+  &.no-internal-scroll {
+    overflow: visible;
+  }
+}
+
+.data-table-wrapper {
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+  display: flex; 
+  flex-direction: column;
+  min-height: 0;
+
+  &.no-internal-scroll {
+    overflow: visible;
+    flex-grow: 0;
+    display: block; 
+  }
+}
+
+.pagination-container {
+  flex-shrink: 0;
+  background: transparent;
+  padding: 10px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.search-action-container {
+  padding-left: 8px;
+  padding-right: 24px;
+}
+
+.left-filter-bar { 
+  width: 280px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+  box-sizing: border-box;
+
+  &.shrunk-to-button {
+    width: 0px !important; 
+    min-width: 0px !important;
+    padding: 0 !important;
+    border: none !important; 
+    overflow: visible !important;
+    transition: width 0.3s ease, min-width 0.3s ease, padding 0.3s ease, border 0.3s ease, overflow 0s 0.3s; 
+  }
+}

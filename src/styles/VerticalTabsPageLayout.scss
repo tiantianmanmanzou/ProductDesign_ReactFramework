@@ -1,0 +1,118 @@
+/* 垂直标签页布局样式 */
+.vertical-tabs-page-layout {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.vertical-tabs-content {
+  flex: 1;
+  background-color: #fff;
+  overflow: auto;
+  padding-top: 0px;
+}
+
+/* 仅图标菜单样式 */
+.icon-only-menu {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 60px !important;
+  
+  // 强制让菜单项在容器中居中
+  .ant-menu-root {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 0 !important; // 确保没有间隙
+  }
+  
+  // 移除Ant Design默认的li元素间距
+  li.ant-menu-item {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+  }
+  
+  // 移除ul元素的默认样式
+  ul.ant-menu {
+    gap: 0 !important;
+    
+    li + li {
+      margin-top: 0 !important; // 确保相邻菜单项没有上边距
+    }
+  }
+  
+  // 强制覆盖Ant Design的默认间距
+  &.ant-menu-vertical {
+    .ant-menu-item {
+      margin-bottom: 0 !important;
+      margin-top: 0 !important;
+      
+      &:not(:first-child) {
+        margin-top: 0 !important; // 强制移除非首个元素的上边距
+      }
+      
+      &:not(:last-child) {
+        margin-bottom: 0 !important; // 强制移除非末个元素的下边距
+      }
+    }
+  }
+  
+  .ant-menu-item {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important; // 移除所有padding
+    margin: 0 !important; // 移除所有margin，消除按钮间隙
+    border-radius: 6px 0 0 6px !important; // 只保留左侧圆角，右侧直角确保边框线为直线
+    height: 48px !important;
+    width: 60px !important; // 修改为60px，占满容器宽度
+    position: relative !important;
+    border-right: 3px solid transparent !important; // 默认透明右边框，为选中状态预留空间
+    line-height: 48px !important; // 设置行高等于高度，确保垂直居中
+    
+    &:first-child {
+      margin-top: 8px !important; // 给第一个菜单项一点上边距
+    }
+    
+    .ant-menu-item-icon {
+      margin: 0 !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      width: 36px !important; // 进一步增大图标区域到36px
+      height: 36px !important; // 进一步增大图标区域到36px
+      font-size: 28px !important; // 进一步增大图标字体大小到28px
+      transition: color 0.2s ease !important; // 添加颜色过渡动画
+    }
+    
+    &:hover {
+      background-color: #f0f0f0 !important; // 悬浮时使用更淡的背景色
+      border-radius: 6px 0 0 6px !important; // 保持左侧圆角，右侧直角
+      border-right: 3px solid #d9d9d9 !important; // 悬浮时显示淡灰色右边框
+    }
+    
+    &.ant-menu-item-selected {
+      background-color: transparent !important; // 移除背景填充
+      color: #1890ff !important; // 图标颜色变蓝
+      border-radius: 6px 0 0 6px !important; // 保持左侧圆角，右侧直角
+      border-right: 3px solid #1890ff !important; // 右侧蓝色边框线，直线样式
+      
+      .anticon {
+        color: #1890ff !important; // 确保图标颜色为蓝色
+      }
+      
+      &:hover {
+        background-color: #f0f8ff !important; // 选中时悬浮使用很淡的蓝色背景
+        border-radius: 6px 0 0 6px !important; // 保持样式一致性
+        border-right: 3px solid #1890ff !important; // 保持蓝色边框
+      }
+    }
+  }
+  
+  .ant-menu-item-icon {
+    margin-right: 0 !important;
+  }
+} 

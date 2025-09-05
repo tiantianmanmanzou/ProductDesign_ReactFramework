@@ -1,0 +1,48 @@
+.tree-node {
+  padding: 8px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  font-size: 14px;
+
+  &.active {
+    color: #409eff;
+    font-weight: 600;
+  }
+
+  &:hover {
+    background-color: #f5f7fa;
+  }
+
+  &.expanded > .tree-node-icon {
+    transform: rotate(90deg);
+  }
+}
+
+.tree-node-icon {
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+  border-left-color: #c0c4cc;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+  margin-right: 4px;
+  display: inline-block;
+}
+
+.tree-node-label {
+  flex-grow: 1;
+}
+
+.count {
+  color: #909399;
+  font-size: 13px;
+  margin-left: auto;
+  padding-left: 8px;
+}
+
+.tree-children {
+  padding-left: 8px;
+}

@@ -1,0 +1,91 @@
+.tabs-page-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+
+  .page-title-container {
+    margin-bottom: 15px;
+    flex-shrink: 0;
+  }
+
+  .tabs-container {
+    margin-bottom: 15px;
+    flex-shrink: 0;
+
+    // 隐藏 Tabs 组件内部可能渲染的 content 区域
+    :global(.tab-content) {
+      display: none;
+    }
+  }
+
+  .main-content-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+
+    .search-action-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      flex-shrink: 0;
+
+      .search-area {
+        flex-grow: 1;
+        margin-right: 15px;
+      }
+
+      .action-area {
+        display: flex;
+        gap: 10px;
+        flex-shrink: 0;
+      }
+    }
+
+    .page-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      .data-table-wrapper {
+        flex-grow: 1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        :global(.ant-table-wrapper) {
+          flex-grow: 1;
+          height: 0;
+        }
+
+        .pagination-container {
+          flex-shrink: 0;
+          padding-top: 10px;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+// 响应式调整
+@media (max-width: 768px) {
+  .search-action-container {
+    flex-direction: column !important;
+    align-items: stretch !important;
+
+    .search-area {
+      margin-right: 0 !important;
+      margin-bottom: 10px;
+    }
+
+    .action-area {
+      justify-content: flex-start !important;
+    }
+  }
+}

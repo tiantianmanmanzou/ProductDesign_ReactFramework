@@ -1,0 +1,77 @@
+.action-button {
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  
+  // 表格操作按钮居中样式
+  &.table-action {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  
+  :global(.ant-btn) {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+    
+    // 移除按钮所有状态的外框和边框效果
+    &:focus,
+    &:focus-within,
+    &:focus-visible,
+    &:active,
+    &:hover:focus,
+    &:hover:active {
+      outline: none !important;
+      box-shadow: none !important;
+      border-color: transparent !important;
+    }
+    
+    // 特别处理primary类型按钮
+    &.ant-btn-primary {
+      &:focus,
+      &:focus-within,
+      &:focus-visible,
+      &:active,
+      &:hover:focus,
+      &:hover:active {
+        outline: none !important;
+        box-shadow: none !important;
+        border-color: #1890ff !important; // 保持原边框颜色
+      }
+    }
+    
+    // 特别处理link类型按钮
+    &.ant-btn-link {
+      &:focus,
+      &:focus-within,
+      &:focus-visible,
+      &:active,
+      &:hover:focus,
+      &:hover:active {
+        outline: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: transparent !important;
+      }
+    }
+    
+    // 特别处理default类型按钮
+    &.ant-btn-default {
+      &:focus,
+      &:focus-within,
+      &:focus-visible,
+      &:active,
+      &:hover:focus,
+      &:hover:active {
+        outline: none !important;
+        box-shadow: none !important;
+        border-color: #d9d9d9 !important; // 保持原边框颜色
+      }
+    }
+  }
+}

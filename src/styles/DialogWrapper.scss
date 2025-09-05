@@ -1,0 +1,108 @@
+/* DialogWrapper样式 */
+
+.dialog-wrapper {
+  /* 标题栏样式 */
+  :global(.ant-modal-header) {
+    background-color: #f5f7fa;
+    padding: 10px 25px;
+    border-bottom: 1px solid #ebeef5;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* 标题文字样式 */
+  :global(.ant-modal-title) {
+    color: #303133;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+  }
+  
+  /* 关闭按钮样式 */
+  :global(.ant-modal-close) {
+    color: #909399;
+    position: static;
+    top: auto;
+    right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 对话框主体样式 */
+  :global(.ant-modal-body) {
+    padding: 20px 25px;
+  }
+
+  /* 对话框脚部样式 */
+  :global(.ant-modal-footer) {
+    padding: 10px 25px 20px;
+    text-align: center;
+  }
+}
+
+/* 右侧滑入动画 */
+@keyframes right-slide-in {
+  from { 
+    transform: translateX(100%); 
+  }
+  to { 
+    transform: translateX(0); 
+  }
+}
+
+/* 右侧滑入效果的Modal */
+.dialog-wrapper-sliding-right {
+  :global(.ant-modal) {
+    position: fixed;
+    right: 0;
+    top: -90px;
+    height: calc(100% - 101px);
+    margin: 0;
+    border-radius: 0;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+    max-width: none;
+    
+    transform: translateX(100%);
+    animation: right-slide-in 0.3s forwards;
+
+    display: flex;
+    flex-direction: column;
+    
+    :global(.ant-modal-content) {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    :global(.ant-modal-body) {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 20px;
+    }
+    
+    :global(.ant-modal-header) {
+      flex-shrink: 0;
+    }
+    
+    :global(.ant-modal-footer) {
+      flex-shrink: 0;
+    }
+  }
+
+  /* 禁用默认的fade动画 */
+  :global(.ant-modal-mask),
+  :global(.ant-modal-wrap) {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}

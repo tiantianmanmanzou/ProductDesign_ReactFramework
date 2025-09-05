@@ -1,0 +1,240 @@
+/* Global styles */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+#root,
+#app {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &.global-scroll {
+    overflow: auto !important;
+  }
+
+  &.iframe-mode {
+    min-height: 100%;
+    overflow: auto !important;
+    position: static;
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    /* iframe模式下取消外边距和内边距 */
+    .ant-layout-content {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    /* iframe模式下调整内容容器 */
+    .content-container {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    /* iframe模式下隐藏所有导航相关元素 */
+    .ant-layout-header,
+    .page-navbar,
+    .page-breadcrumb {
+      display: none !important;
+    }
+  }
+}
+
+/* iframe模式下允许滚动 */
+.iframe-mode .ant-layout,
+.iframe-mode .ant-layout-content,
+.iframe-mode .page-container {
+  overflow: auto !important;
+}
+
+/* 全局样式，确保iframe模式下不显示导航元素 */
+body.iframe-embedded {
+  .tenant-header,
+  .main-navbar,
+  .page-breadcrumb,
+  nav.navbar {
+    display: none !important;
+  }
+}
+
+/* Ant Design 全局样式调整 */
+.ant-table-wrapper {
+  .ant-table {
+    font-size: 14px;
+  }
+  
+  .ant-table-thead > tr > th {
+    background: #fafafa;
+    border-bottom: 1px solid #f0f0f0;
+  }
+}
+
+/* 移除所有按钮的选中外框效果 */
+.ant-btn {
+  &:focus,
+  &:focus-within,
+  &:focus-visible,
+  &:active,
+  &:hover:focus,
+  &:hover:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  // 特别处理primary类型按钮，保持原有边框颜色
+  &.ant-btn-primary {
+    &:focus,
+    &:focus-within,
+    &:focus-visible,
+    &:active,
+    &:hover:focus,
+    &:hover:active {
+      outline: none !important;
+      box-shadow: none !important;
+      border-color: #1890ff !important;
+    }
+  }
+  
+  // 特别处理link类型按钮
+  &.ant-btn-link {
+    &:focus,
+    &:focus-within,
+    &:focus-visible,
+    &:active,
+    &:hover:focus,
+    &:hover:active {
+      outline: none !important;
+      box-shadow: none !important;
+      border: none !important;
+      background: transparent !important;
+    }
+  }
+  
+  // 特别处理default类型按钮
+  &.ant-btn-default {
+    &:focus,
+    &:focus-within,
+    &:focus-visible,
+    &:active,
+    &:hover:focus,
+    &:hover:active {
+      outline: none !important;
+      box-shadow: none !important;
+      border-color: #d9d9d9 !important;
+    }
+  }
+}
+
+
+
+/* 移除链接类型按钮的外框效果 */
+a {
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  &:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  &:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.ant-form-item {
+  margin-bottom: 16px;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.ant-pagination {
+  text-align: right;
+  margin-top: 16px;
+}
+
+/* 通用工具类 */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.p-16 {
+  padding: 16px;
+}
+
+.p-24 {
+  padding: 24px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .ant-form-inline .ant-form-item {
+    display: block;
+    margin-bottom: 16px;
+  }
+  
+  .ant-table-wrapper {
+    overflow-x: auto;
+  }
+}

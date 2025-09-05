@@ -1,0 +1,64 @@
+/**
+ * 全局滚动样式设置
+ * 处理页面滚动行为，确保只有内容区域（如表格）才有滚动条
+ * --- 已修改为允许全局滚动 --- 
+ */
+
+// 处理页面容器
+html, body {
+  margin: 0;
+  padding: 0;
+  /* height: 100%; */ /* Removed */
+  /* overflow: hidden; */ /* Removed */
+}
+
+// 根容器设置
+#app {
+  /* height: 100%; */ /* Removed */
+  /* overflow: hidden; */ /* Removed */
+}
+
+// 通用布局容器 - 转换为React的class名
+.ant-layout, 
+.page-container,
+.main-container {
+  display: flex !important;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+// 主内容区 - 转换为React的class名
+.ant-layout-content {
+  flex: 1 !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+// 确保标记了use-full-height-layout的容器不产生额外滚动条
+.use-full-height-layout {
+  /* display: flex; */ /* Removed */
+  /* flex-direction: column; */ /* Removed */
+  /* flex: 1; */ /* Removed */
+  /* overflow: hidden; */ /* Removed */
+}
+
+// 确保表格容器层可以滚动
+.data-table-wrapper {
+  /* flex: 1; */ /* Removed */
+  /* overflow: auto !important; */ /* Removed, let parent scroll */
+  position: relative;
+  
+  // 确保表格内容填充可视区域 - 转换为Ant Design的class名
+  :global(.ant-table-wrapper) {
+    width: 100%;
+    
+    .ant-table {
+      width: 100% !important;
+    }
+  }
+}

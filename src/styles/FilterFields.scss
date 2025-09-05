@@ -1,0 +1,27 @@
+.filter-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-field {
+  .filter-tree {
+    // Tree field specific styles
+  }
+
+  .filter-select {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    label {
+      font-size: 14px;
+      color: #606266;
+      font-weight: 500;
+    }
+
+    :global(.ant-select) {
+      width: 100%;
+    }
+  }
+}

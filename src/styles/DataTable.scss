@@ -1,0 +1,122 @@
+.data-table {
+  margin-bottom: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  
+  .pagination-area {
+    flex-shrink: 0;
+  }
+  
+  // Ant Design Table样式调整
+  :global(.ant-table-wrapper) {
+    width: 100%;
+    border: 1px solid #f0f0f0;
+    border-bottom: none;
+    
+    .ant-table {
+      width: 100%;
+      table-layout: auto;
+      
+      .ant-table-thead > tr > th {
+        background-color: #fafafa !important;
+        color: #606266;
+        font-weight: 600;
+        text-align: center !important;
+        padding: 8px 16px !important;
+        font-size: 13px !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+        white-space: nowrap;
+      }
+      
+      .ant-table-tbody > tr > td {
+        text-align: center !important;
+        padding: 8px 16px !important;
+        font-size: 13px !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+        word-break: break-word;
+        
+        // 为超长内容添加省略号
+        .ant-table-cell-ellipsis {
+          max-width: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      
+      .ant-table-cell {
+        // 表格中的所有按钮
+        .ant-btn {
+          &:focus,
+          &:focus-within,
+          &:focus-visible,
+          &:active,
+          &:hover:focus,
+          &:hover:active {
+            outline: none !important;
+            box-shadow: none !important;
+            border: none !important;
+          }
+        }
+        
+        .ant-btn-link {
+          padding: 2px 4px;
+          font-size: 14px;
+          
+          // 移除链接按钮的选中外框
+          &:focus,
+          &:focus-within,
+          &:focus-visible,
+          &:active,
+          &:hover:focus,
+          &:hover:active {
+            outline: none !important;
+            box-shadow: none !important;
+            border: none !important;
+            background: transparent !important;
+          }
+        }
+        
+                 // 表格操作按钮区域样式
+         .table-action-buttons {
+           display: flex !important;
+           justify-content: center !important;
+           align-items: center !important;
+           width: 100% !important;
+           text-align: center !important;
+           
+           .action-button.table-action {
+             margin-bottom: 0 !important;
+             width: 100% !important;
+             display: flex !important;
+             justify-content: center !important;
+             
+             .ant-space {
+               gap: 12px !important;
+               justify-content: center !important;
+               width: 100% !important;
+               display: flex !important;
+             }
+           }
+         }
+      }
+    }
+    
+    // 响应式调整
+    @media screen and (max-width: 1366px) {
+      .ant-table-tbody > tr > td:last-child {
+        min-width: 80px;
+      }
+    }
+    
+    @media screen and (max-width: 768px) {
+      .ant-table-tbody > tr > td:last-child {
+        min-width: 150px;
+        white-space: nowrap !important;
+      }
+    }
+  }
+}
