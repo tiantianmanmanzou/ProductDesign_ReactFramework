@@ -10,7 +10,7 @@
   <circle cx="37" cy="38" r="2" fill="#FFF"/>
   <circle cx="67" cy="38" r="2" fill="#FFF"/>
   
-  <!-- 开心的嘴巴 -->
+  <!-- 开心的嘴巴 ^-^-->
   <path d="M 30 60 Q 50 75 70 60" stroke="#000" stroke-width="3" fill="none" stroke-linecap="round"/>
   
   <!-- 脸颊红晕 -->
